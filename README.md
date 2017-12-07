@@ -8,5 +8,5 @@
 
 ## Download and Installation
 
-To begin using this tools, choose one of the following options to get started:
+To begin using this tool, choose one of the following options to get started:
 * Clone the repo: `git clone https://github.com/EM-Creations/WheelofFortune.git`
