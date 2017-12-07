@@ -1,8 +1,16 @@
 /* APM Specific */
 #wheelOfFortune {
-  border: 1px solid black;
-  padding: 1rem;
-  width: 50%;
+	border-radius: 50%;
+	width: 50%;
+	height: auto;
+	padding-top: 50%;
+	background: #ef8913;
+}
+
+#wheelOfFortune>span#text{
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
 }
 
 #wheelOfFortune:hover {
