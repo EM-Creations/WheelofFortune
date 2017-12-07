@@ -1,0 +1,10 @@
+/* APM Specific */
+#wheelOfFortune {
+  border: 1px solid black;
+  padding: 1rem;
+  width: 50%;
+}
+
+#wheelOfFortune:hover {
+  cursor: pointer;
+}s
