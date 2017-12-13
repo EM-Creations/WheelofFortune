@@ -15,11 +15,14 @@ body {
   padding: 1.25rem 2.5rem; }
 
 .content-section {
-  padding-top: 7.5rem;
-  padding-bottom: 7.5rem; }
+  padding-top: 1rem;
+  padding-bottom: 1rem; 
+}
 
-.content-section-heading h2 {
-  font-size: 3rem; }
+.content-section-heading h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
 
 .content-section-heading h3 {
   font-size: 1rem;
