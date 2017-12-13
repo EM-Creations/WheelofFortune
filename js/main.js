@@ -1,6 +1,9 @@
 (function($) {
   "use strict"; // Start of use strict
 
+  let logger = new Logger("main.js");
+  logger.logInfo("Started loading..");
+
   // Closes the sidebar menu
   $(".menu-toggle").click(function(e) {
     e.preventDefault();
@@ -70,4 +73,5 @@
     .pop()
   .end();*/
 
+logger.logInfo("Finished loading");
 })(jQuery); // End of use strict
