@@ -6,10 +6,9 @@
 	height: 70%;
 	padding-top: 70%;
 
-	/*background: #ef8913;
-	background: -webkit-linear-gradient(left, orange, orange 20%, black 20%, black);*/
-	background: -moz-linear-gradient(left, red, red 20%, blue 20%, blue);
-	/*background-image: url('../img/bg-1.gif');*/
+	background: linear-gradient(45deg, lightblue 50%, blue 0%), linear-gradient(-45deg, green 50%, darkgreen 0%), linear-gradient(-45deg, #E5E500 50%, yellow 0%), linear-gradient(45deg, tomato 50%, red 0%);
+	background-size: 50% 50%;
+	background-position: 0% 0%, 100% 0%, 0 100%, 100% 100%;
 	background-repeat: no-repeat;
 }
 
