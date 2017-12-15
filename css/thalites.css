@@ -1,17 +1,35 @@
+/**
+ * Author: Edward McKnight (EM-Creations.co.uk)
+ */
 /* APM Specific */
-#wheelOfFortune {
+div#wheelOfFortune {
 	margin: 0 auto;
 	border-radius: 50%;
 	width: 70%;
 	height: 70%;
 	padding-top: 70%;
 
-	background: linear-gradient(45deg, lightblue 50%, blue 0%), linear-gradient(-45deg, green 50%, darkgreen 0%), linear-gradient(-45deg, #E5E500 50%, yellow 0%), linear-gradient(45deg, tomato 50%, red 0%);
+	background:
+		linear-gradient(45deg, lightblue 50%, blue 0%),
+		linear-gradient(-45deg, green 50%, darkgreen 0%), 
+		linear-gradient(-45deg, #E5E500 50%, yellow 0%), 
+		linear-gradient(45deg, tomato 50%, red 0%);
 	background-size: 50% 50%;
 	background-position: 0% 0%, 100% 0%, 0 100%, 100% 100%;
 	background-repeat: no-repeat;
+	box-shadow: inset 0 0 10px #000000;
 }
 
-#wheelOfFortune:hover {
+div#wheelOfFortune:hover {
   cursor: pointer;
+}
+
+div#clacker {
+	background-color: black;
+	width: .5rem;
+	height: 3rem;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	z-index: 10;
 }

@@ -2,16 +2,19 @@
  * Logger class
  * Author: Edward McKnight (EM-Creations.co.uk)
  */
-function Logger (file) {
+function Logger (file, visible = true) {
 	this.file = file;
+	this.visible = visible;
 }
 
 Logger.prototype.log = function(severity, message) {
-	let date = new Date();
+	if (this.visible) { // If the logging is visible
+		let date = new Date();
 
-	console.log("LOGGER - {" + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + " " 
-		+ date.getDate() + "/"+ (date.getMonth() + 1) + "/" + date.getFullYear() + "} (" + this.file + ") ["
-		 + severity + "]: " + message);
+		console.log("LOGGER - {" + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + " " 
+			+ date.getDate() + "/"+ (date.getMonth() + 1) + "/" + date.getFullYear() + "} (" + this.file + ") ["
+			 + severity + "]: " + message);
+	}
 };
 
 Logger.prototype.logError = function(message) {

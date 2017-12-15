@@ -1,7 +1,11 @@
 (function($) {
   "use strict"; // Start of use strict
+  
+  /* Constants */
+  const LOGGING = true; // Set this to true to output logging to console, otherwise false
+  /* End of constants */
 
-  let logger = new Logger("main.js");
+  let logger = new Logger("main.js", LOGGING);
   logger.logInfo("Started loading..");
 
   // Closes the sidebar menu
@@ -44,14 +48,45 @@
   });
 
   // APM specific
-  let forward = true;
+  /**
+   * Get rotation degrees of an object 
+   *
+   * @param {object} obj 
+   * @return {Number} rotation
+   */
+  function getRotationDegrees(obj) {
+      var matrix = obj.css("-webkit-transform") ||
+      obj.css("-moz-transform")    ||
+      obj.css("-ms-transform")     ||
+      obj.css("-o-transform")      ||
+      obj.css("transform");
+      if(matrix !== 'none') {
+          var values = matrix.split('(')[1].split(')')[0].split(',');
+          var a = values[0];
+          var b = values[1];
+          var angle = Math.round(Math.atan2(b, a) * (180/Math.PI));
+      } else { var angle = 0; }
+      return (angle < 0) ? angle + 360 : angle;
+  }
 
+  let forward = true;
+  let baseDeg = 2000;
+  let additionalDeg = 0;
+
+  /**
+   * Click handler for the wheel of fortune
+   *
+   */
   $('#wheelOfFortune').click(function () {
 
     if (forward) {
-      move("#wheelOfFortune").rotate(360).duration('1.5s').end();
+      additionalDeg = Math.floor((Math.random() * 360) + 1);
+      logger.logInfo("Going forwards, by: " + (baseDeg + additionalDeg));
+
+      move("#wheelOfFortune").rotate(baseDeg + additionalDeg).duration('3s').end();
     } else {
-      move("#wheelOfFortune").rotate(-360).duration('1.5s').end();
+      move("#wheelOfFortune").rotate(0).duration('3s').end();
+      logger.logInfo("Going backwards");
     }
 
     forward = !forward;
@@ -73,5 +108,5 @@
     .pop()
   .end();*/
 
-logger.logInfo("Finished loading");
+  logger.logInfo("Finished loading");
 })(jQuery); // End of use strict
